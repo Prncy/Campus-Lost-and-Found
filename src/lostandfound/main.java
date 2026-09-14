@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Main {
+    public class Main{
 
     // Scanner declared as a class variable so all methods can use it
     static Scanner input = new Scanner(System.in);
