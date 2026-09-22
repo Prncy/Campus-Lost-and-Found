@@ -34,7 +34,7 @@ import java.util.ArrayList;
 
                 case 2:
                     // Report found item
-                    System.out.println("Report Found Item selected.");
+                    reportFoundItem();
                     break;
 
                 case 3:
@@ -133,6 +133,63 @@ import java.util.ArrayList;
         System.out.println("Colour: " + colour);
         System.out.println("Location: " + location);
         System.out.println("Date Lost: " + dateLost);
+        System.out.println("Description: " + description);
+
+        System.out.println("\nReturning to main menu...");
+    }
+}
+// ==============================
+    // 2. Report Found Item Method
+    // ==============================
+
+    public static void reportFoundItem() {
+
+        // Variables for storing found item information
+        String itemName;
+        String category;
+        String colour;
+        String location;
+        String dateFound;
+        String description;
+
+        System.out.println("\n----- REPORT FOUND ITEM -----");
+
+        System.out.print("What is the name of the item? ");
+        itemName = input.nextLine();
+
+        System.out.print("What category does the item belong to? ");
+        category = input.nextLine();
+
+        System.out.print("What colour is the item? ");
+        colour = input.nextLine();
+
+        System.out.print("Where did you find the item? ");
+        location = input.nextLine();
+
+        System.out.print("What date did you find the item? ");
+        dateFound = input.nextLine();
+
+        System.out.print("Please describe the item: ");
+        description = input.nextLine();
+
+        // Store the found item
+        String foundItem = "Item: " + itemName
+                + " | Category: " + category
+                + " | Colour: " + colour
+                + " | Location: " + location
+                + " | Date Found: " + dateFound
+                + " | Description: " + description;
+
+        foundItems.add(foundItem);
+
+        // Display confirmation
+        System.out.println("\n----- FOUND ITEM REPORT -----");
+        System.out.println("Found item report recorded successfully.");
+        System.out.println("Item: " + itemName);
+        System.out.println("Category: " + category);
+        System.out.println("Colour: " + colour);
+        System.out.println("Location: " + location);
+        System.out.println("Date Found: " + dateFound);
         System.out.println("Description: " + description);
 
         System.out.println("\nReturning to main menu...");
