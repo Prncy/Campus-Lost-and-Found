@@ -62,7 +62,7 @@ public class Main{
 
     
  // ==============================
-// 2. Report a lost item Method
+// 1. Report a lost item Method
 // ==============================
     public static void reportLostItem() {
 
