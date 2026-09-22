@@ -5,8 +5,7 @@ import java.util.ArrayList;
 public class Main{
 
      //scanner method to receive user input
-    static 3
-    Scanner input = new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
     static ArrayList <String> foundItems = new ArrayList<String>();
     static ArrayList <String> lostItems = new ArrayList<String>();
 
@@ -18,13 +17,14 @@ public class Main{
     do{
         displayMenu();
         choice = input.nextInt();
+        input.nextLine();
 
         switch(choice){
             case 1://report lost items
                 reportLostItem();
                 break;
             case 2://report found items
-            
+                reportFoundItem();
                 break;
             case 3://search reports
                  searchReports();
@@ -59,27 +59,11 @@ public class Main{
         System.out.print("=> ");
     }
 
-    //1.Report lost items method  .
 
-    //2.Report Found items method
-
-    //3.Search reports method
-
-    //4.View reports methods
-   
-    /* private static void reportcard(
-        int reportNo, String Type,String Item, String Category, String Location, String Date, String Description
-    ){
-        System.out.println("Report "+reportNo);
-        System.out.println("Type: "+Type);
-        System.out.println("Item: "+Item);
-        System.out.println("Category: "+Categ..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................ory);
-        System.out.println("Location: "+Location);                                        
-        System.out.println("Date: "+Date);                                                                                                        
-        System.out.println("Description: "+Description);
-    }*/
     
- // Method for reporting a lost item
+ // ==============================
+// 2. Report a lost item Method
+// ==============================
     public static void reportLostItem() {
 
         // Variables for storing the lost item information
@@ -93,22 +77,31 @@ public class Main{
         System.out.println("\n----- REPORT LOST ITEM -----");
 
         System.out.print("What is the name of the item? ");
-        itemName = scanner.nextLine();
+        itemName = input.nextLine();
 
         System.out.print("What category does the item belong to? ");
-        category = scanner.nextLine();
+        category = input.nextLine();
 
         System.out.print("What colour is the item? ");
-        colour = scanner.nextLine();
+        colour = input.nextLine();
 
         System.out.print("Where did you lose the item? ");
-        location = scanner.nextLine();
+        location = input.nextLine();
 
         System.out.print("What date did you lose the item? ");
-        dateLost = scanner.nextLine();
+        dateLost = input.nextLine();
 
         System.out.print("Please describe the item: ");
-        description = scanner.nextLine();
+        description = input.nextLine();
+
+        String lostItem = "Item: " + itemName
+            + " | Category: " + category
+            + " | Colour: " + colour
+            + " | Location: " + location
+            + " | Date Lost: " + dateLost
+            + " | Description: " + description;
+
+        lostItems.add(lostItem);
 
         // Display confirmation
         System.out.println("\n----- LOST ITEM REPORT -----");
@@ -128,6 +121,58 @@ public class Main{
 // 2. Report a found item Method
 // ==============================
     
+    public static void reportFoundItem() {
+
+        // Variables for storing found item information
+        String itemName;
+        String category;
+        String colour;
+        String location;
+        String dateFound;
+        String description;
+
+        System.out.println("\n----- REPORT FOUND ITEM -----");
+
+        System.out.print("What is the name of the item? ");
+        itemName = input.nextLine();
+
+        System.out.print("What category does the item belong to? ");
+        category = input.nextLine();
+
+        System.out.print("What colour is the item? ");
+        colour = input.nextLine();
+
+        System.out.print("Where did you find the item? ");
+        location = input.nextLine();
+
+        System.out.print("What date did you find the item? ");
+        dateFound = input.nextLine();
+
+        System.out.print("Please describe the item: ");
+        description = input.nextLine();
+
+        // Store the found item
+        String foundItem = "Item: " + itemName
+                + " | Category: " + category
+                + " | Colour: " + colour
+                + " | Location: " + location
+                + " | Date Found: " + dateFound
+                + " | Description: " + description;
+
+        foundItems.add(foundItem);
+
+        // Display confirmation
+        System.out.println("\n----- FOUND ITEM REPORT -----");
+        System.out.println("Found item report recorded successfully.");
+        System.out.println("Item: " + itemName);
+        System.out.println("Category: " + category);
+        System.out.println("Colour: " + colour);
+        System.out.println("Location: " + location);
+        System.out.println("Date Found: " + dateFound);
+        System.out.println("Description: " + description);
+
+        System.out.println("\nReturning to main menu...");
+    }
 
 
 // ==============================
@@ -209,9 +254,9 @@ public static void printReportList(ArrayList<String> list) {
         System.out.println(list.get(i));
     }
 }
-
-
     
 }
 
                 
+
+
