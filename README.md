@@ -1,90 +1,68 @@
-# Campus-Lost-and-Found
+# Campus Lost and Found Coordinator
 
-Project Overview
+**Course:** CS350 – Object-Oriented Programming in Java  
+**Group:** 10
 
-The Campus Lost and Found Coordinator is a Java-based application designed to help students and other campus users report, search for, and manage lost and found items.
+## Project overview
 
-The system will provide a centralized way of recording information about lost and found belongings. Users will be able to provide details such as the item name, category, colour, location, date, and description. The system will use these details to help identify possible matches between lost and found reports.
+The Campus Lost and Found Coordinator is a Java console application that helps members of the campus community record and search for lost and found belongings.
 
-The project will be developed progressively throughout the semester. As the team learns more Java concepts and makes further design decisions, additional features and components will be added to the project.
+Each report stores the item name, category, colour, location, date, description, and whether the item was reported as LOST or FOUND.
 
-How the System Is Intended to Work
+## Current features
 
-The basic process will be:
+- Display an interactive main menu.
+- Record a lost item.
+- Record a found item.
+- Search reports using case-insensitive keywords.
+- View all reports and a summary of lost and found records.
+- Validate menu choices and prevent empty report fields.
 
-1. A user reports an item as lost or found.
-2. The system records the information provided about the item.
-3. Users can view and search through available lost and found reports.
-4. The system compares relevant item information to identify possible matches.
-5. Possible matches can be reviewed by the appropriate user or coordinator.
-6. The status of a report can be updated as the item progresses through the recovery process.
+## Object-oriented structure
 
-The exact implementation of these features will be developed and refined as the project progresses.
+The active application has one source directory:
 
-Technology
+```text
+src/main/java/com/group10/lostandfound/
+├── Main.java
+├── LostAndFoundSystem.java
+├── Report.java
+└── Student.java
+```
 
-The project will be developed using Java.
+- **Main:** starts the application, displays the menu, and routes user choices.
+- **LostAndFoundSystem:** creates, stores, searches, and displays reports.
+- **Report:** represents one lost or found report. Both report types use the same class.
+- **Student:** stores basic student details and is a foundation for the registration feature. Registration is not connected yet.
 
-Java will be used to implement the application's functionality, including user management, item reporting, searching, matching, and other features that are added during development.
+The classes use the package `com.group10.lostandfound`.
 
-Data storage and persistence will be introduced later in the project. The team currently plans to consider CSV files for storing application data as the project develops.
+## Compile and run
 
-Current Project Structure
+From the repository root, run:
 
-At the current stage, the project has a simple structure:
+```bash
+javac -d out src/main/java/com/group10/lostandfound/*.java
+java -cp out com.group10.lostandfound.Main
+```
 
-Campus-Lost-and-Found/
-│
-├── minutes/
-│   └── (weekly team meeting minutes)
-│
-├── src/
-│   └── Main.java
-│
-└── README.md
+This requires a JDK to be installed.
 
-"minutes/"
+## Current limitations / planned work
 
-This folder contains the team's weekly project meeting minutes and other relevant meeting records.
+- Reports are stored in memory and are lost when the application closes.
+- Search uses basic keyword matching; fuzzy matching is not implemented.
+- Student is currently a model class only. Registration and login are not implemented.
+- CSV loading and saving are not implemented.
+- Automated test cases still need to be added.
 
-"src/"
+## Development direction
 
-The "src" folder contains the Java source code for the project.
+The next stages are to test this OOP refactor, connect student registration to reports, add CSV persistence, implement lost/found matching, and expand the test cases.
 
-At the current stage, it contains the main Java file:
+## Team
 
-src/
-└── Main.java
-
-As development progresses, additional Java classes and files will be added to this folder when required.
-
-"README.md"
-
-This file provides an overview of the project, its current structure, intended functionality, and development direction.
-
-Development Approach
-
-The project will be developed incrementally.
-
-The team will begin with a simple Java project structure and gradually introduce additional functionality as the project develops. The structure of the source code will be expanded when new Java concepts, features, and design requirements are introduced.
-
-Future updates may include:
-
-- Additional Java classes
-- Object-oriented programming components
-- User management
-- Lost and found item management
-- Searching and matching functionality
-- Item status management
-- CSV-based data persistence
-- Testing components
-- Additional project documentation
-
-The README will be updated regularly to reflect significant changes to the project.
-
-Team Members
-
-1. MAKETO MAKETO - GitHub Lead
-2. Kambani J.T Mbewe - Testing Lead 
-3. VINESS BUPE - Documentation lead 
-4. Prince Banda - Chief Developer 
+1. MAKETO MAKETO – GitHub Lead
+2. Kambani J.T Mbewe – Testing Lead
+3. VINESS BUPE – Documentation Lead
+4. Prince Banda – Chief Developer
