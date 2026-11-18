@@ -9,7 +9,7 @@ public class Main{
     static ArrayList <String> foundItems = new ArrayList<String>();
     static ArrayList <String> lostItems = new ArrayList<String>();
 
-    public static void main(String[] args){
+    public  static void main(String[] args){
     
     //declarations
     int choice;
