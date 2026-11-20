@@ -1,34 +1,28 @@
+package com.group10.lostandfound;
+
 import java.util.Scanner;
 
 /**
  * Entry point for the Campus Lost and Found application.
- * Main handles the menu and program flow; LostAndFoundSystem handles
- * report creation, storage, searching, and viewing.
+ * Main is responsible for displaying the menu and accepting choices.
  */
 public class Main {
 
-    private static final Scanner input = new Scanner(System.in);
-
-<<<<<<< HEAD
-    public  static void main(String[] args){
-    
-    //declarations
-    int choice;
-=======
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         LostAndFoundSystem system = new LostAndFoundSystem(input);
-        int choice;
->>>>>>> 5529f0edc0db1ac0d6d2e3667339cb4c5c1184ec
 
-        do {
+        int choice = 0;
+
+        while (choice != 5) {
             displayMenu();
-            String choiceInput = input.nextLine();
+
+            String choiceInput = input.nextLine().trim();
 
             try {
                 choice = Integer.parseInt(choiceInput);
             } catch (NumberFormatException e) {
-                System.out.println("Invalid choice. Please enter a number from 1 to 5.");
-                choice = 0;
+                System.out.println("Please enter a valid number from 1 to 5.");
                 continue;
             }
 
@@ -46,28 +40,27 @@ public class Main {
                     system.viewReports();
                     break;
                 case 5:
-                    System.out.println("Exiting...");
+                    System.out.println("Thank you for using Campus Lost and Found!");
                     break;
                 default:
-                    System.out.println("Invalid Choice");
-                    break;
+                    System.out.println("Invalid choice. Please choose from 1 to 5.");
             }
-        } while (choice != 5);
+        }
 
         input.close();
     }
 
-    // Displays the main application menu.
     private static void displayMenu() {
-        System.out.println("=================================");
-        System.out.println("      Campus Lost and Found");
-        System.out.println("=================================");
+        System.out.println();
+        System.out.println("========================================");
+        System.out.println("       CAMPUS LOST AND FOUND");
+        System.out.println("========================================");
         System.out.println("1. Report a Lost Item");
         System.out.println("2. Report a Found Item");
         System.out.println("3. Search Reports");
         System.out.println("4. View Reports");
         System.out.println("5. Exit");
-        System.out.println("=================================");
-        System.out.print("=> ");
+        System.out.println("========================================");
+        System.out.print("Enter your choice: ");
     }
 }
