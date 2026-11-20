@@ -3,10 +3,10 @@ package com.group10.lostandfound;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Handles searching and viewing the reports recorded in the system.
- * This class uses the existing shared report collection; it does not
- * create or maintain a separate collection.
+/*
+   Handles searching and viewing the reports recorded in the system.
+   This class uses the existing shared report collection; it does not
+   create or maintain a separate collection.
  */
 public class ReportSearchView {
 
@@ -16,10 +16,10 @@ public class ReportSearchView {
     public ReportSearchView(ArrayList<Report> reports, Scanner input) {
         this.reports = reports;
         this.input = input;
-    }
+    } 
 
-    /**
-     * Displays every recorded report and a summary of LOST and FOUND reports.
+    /*
+       Displays every recorded report and a summary of LOST and FOUND reports.
      */
     public void viewReports() {
         System.out.println("\n===== ALL RECORDED REPORTS =====");
@@ -48,9 +48,9 @@ public class ReportSearchView {
         System.out.println("Found reports: " + foundCount);
     }
 
-    /**
-     * Searches report fields using a case-insensitive keyword.
-     * Matching is delegated to Report.matchesKeyword().
+    /*
+       Searches report fields using a case-insensitive keyword.
+       Matching is delegated to Report.matchesKeyword().
      */
     public void searchReports() {
         System.out.println("\n===== SEARCH REPORTS =====");
